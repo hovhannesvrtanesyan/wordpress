@@ -1,2 +1,2 @@
 FROM wordpress:latest
-COPY /wordpress/* /var/www/hml/
+# COPY /wordpress/* /var/www/hml/
