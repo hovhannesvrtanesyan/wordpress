@@ -11,8 +11,10 @@ jobs:
       run: git clone https://github.com/hovhannesvrtanesyan/wordpress.git
     - name: CD into directory
       run: cd wordpress; ls
+    - name: LLS
+      run:  pwd; ls
     - name: Build image
-      run: ls;docker build . -t ${{ secrets.DOCKER_HUB_LOGIN }}/${{ github.event.repository.name }}:${{ github.run_number }}
+      run: docker build . -t ${{ secrets.DOCKER_HUB_LOGIN }}/${{ github.event.repository.name }}:${{ github.run_number }}
     - name: Login to DockerHub
       run: docker login -u ${{ secrets.DOCKER_HUB_LOGIN }} -p ${{ secrets.DOCKER_HUB_PASS }}
     - name: Push to DockerHub
