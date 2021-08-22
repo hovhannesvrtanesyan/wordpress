@@ -7,7 +7,7 @@ jobs:
   manual:
     runs-on: ubuntu-latest
     steps:
-    - name: Checkout repo
-      run: pwd; ls -la
+    - name: Clone repo
+      run: git clone https://github.com/hovhannesvrtanesyan/wordpress.git
     - name: Login to DockerHub
       run: docker login -u ${{ secrets.DOCKER_HUB_LOGIN }} -p ${{ secrets.DOCKER_HUB_PASS }}
